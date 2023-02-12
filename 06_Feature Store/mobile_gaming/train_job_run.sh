@@ -1,0 +1,2 @@
+
+gcloud ai custom-jobs create --region=us-central1 --display-name=xgb_classifier_training_20220616 --worker-pool-spec=machine-type=n1-standard-4,replica-count=1,executor-image-uri=us-docker.pkg.dev/vertex-ai/training/scikit-learn-cpu.0-23:latest,local-package-path=train_package,python-module=trainer.task,extra-dirs=config --args=--data_path=/gcs/vertex-experiments-dl/data/features/train_features_20220616/000000000000.csv,--model_dir=/gcs/vertex-experiments-dl/model/20220616,--config_path=config/config.yaml --verbosity='info'

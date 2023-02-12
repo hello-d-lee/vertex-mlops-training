@@ -1,0 +1,28 @@
+data_model_params:
+  target: churned
+  categorical_features:
+    - country
+    - operating_system
+    - language
+  numerical_features:
+    - cnt_user_engagement
+    - cnt_level_start_quickplay
+    - cnt_level_end_quickplay
+    - cnt_level_complete_quickplay
+    - cnt_level_reset_quickplay
+    - cnt_post_score
+    - cnt_spend_virtual_currency
+    - cnt_ad_reward
+    - cnt_challenge_a_friend
+    - cnt_completed_5_levels
+    - cnt_use_extra_steps
+  weight_feature: class_weights
+  train_test_split:
+    test_size: 0.2
+    random_state: 8
+model_params:
+  booster: gbtree
+  objective: binary:logistic
+  max_depth: 80
+  n_estimators: 100
+  random_state: 8
